@@ -14,6 +14,7 @@ import java.util.Collection;
 public class Controller {
     @Autowired
     private ProgrammerService service;
+    private Programmer programmerObject;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Programmer getProgrammerById(@PathVariable("id") int id){
@@ -30,6 +31,12 @@ public class Controller {
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void PutProgrammer(@RequestBody Programmer ProgrammerObject) throws IOException {
         this.service.PutProgrammer(ProgrammerObject);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void ChangeProgrammer(@RequestBody Programmer ProgrammerObject) throws IOException {
+        programmerObject = ProgrammerObject;
+        this.service.ChangeProgrammer(ProgrammerObject);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

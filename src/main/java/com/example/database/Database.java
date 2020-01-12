@@ -35,6 +35,12 @@ public class Database {
         programmers = TextDatabase.getProgrammers();
     }
 
+    public void ChangeProgrammer(Programmer ProgrammerObject) throws IOException {
+//        programmers.put(ProgrammerObject.getId(), ProgrammerObject);
+        TextDatabase.putData(ProgrammerObject);
+        programmers = TextDatabase.getProgrammers();
+    }
+
     public void deleteProgrammerById(int id) throws IOException {
 //        return programmers.remove(id);
         TextDatabase.deleteDataById(id);

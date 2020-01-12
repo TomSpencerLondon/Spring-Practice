@@ -26,4 +26,7 @@ public class ProgrammerService {
     public void PutProgrammer(Programmer ProgrammerObject) throws IOException {
         this.database.PutProgrammer(ProgrammerObject);
     }
+    public void ChangeProgrammer(Programmer ProgrammerObject) throws IOException {
+        this.database.ChangeProgrammer(ProgrammerObject);
+    }
 }

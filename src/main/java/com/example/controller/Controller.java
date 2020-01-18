@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Collection;
 
 @RestController
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET })
 @RequestMapping("/programmers")
 public class Controller {
     @Autowired
